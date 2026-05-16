@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Members | AI Research Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<!-- Loader -->
+<div id="loader">
+  <div class="loader-dots">
+    <span class="loader-dot"></span>
+    <span class="loader-dot"></span>
+    <span class="loader-dot"></span>
+  </div>
+</div>
+
+
+<!-- Header -->
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="header-logo"></a>
+    <nav class="desktop-nav">
+      <a href="index.html"   class="nav-link" data-page="index.html">Home</a>
+      <!--<a href="about.html"   class="nav-link" data-page="about.html">About</a>-->
+      <a href="research.html" class="nav-link" data-page="research.html">Research</a>
+      <a href="members.html"  class="nav-link" data-page="members.html">Members</a>
+      <button class="nav-link contact-link">Contact</button>
+
+    </nav>
+    <div></div>
+    <button id="hamburger" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+  </div>
+  <nav id="mobile-nav" class="mobile-nav">
+    <a href="index.html"   class="mobile-nav-link" data-page="index.html">Home</a>
+    <!--<a href="about.html"   class="mobile-nav-link" data-page="about.html">About</a>-->
+    <a href="research.html" class="mobile-nav-link" data-page="research.html">Research</a>
+    <a href="members.html"  class="mobile-nav-link" data-page="members.html">Members</a>
+    <button class="mobile-nav-link contact-link">Contact</button>
+    
+  </nav>
+</header>
+
+<!-- SVG icon defs (hidden, referenced via use) -->
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="icon-profile" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+  </symbol>
+  <symbol id="icon-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+  </symbol>
+  <symbol id="icon-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+  </symbol>
+  <symbol id="icon-twitter" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+  </symbol>
+  <symbol id="icon-linkedin" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+    <rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/>
+  </symbol>
+  <symbol id="icon-github" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
+    <path d="M9 18c-4.51 2-5-2-7-2"/>
+  </symbol>
+  <symbol id="icon-scholar" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 3L1 9l4 2.18V17c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-5.82L21 9.5V17h2V9L12 3zm6 12H6v-4.61l6 3.27 6-3.27V15zm-6-3.73L4.13 8.5 12 4.25l7.87 4.25L12 11.27z"/>
+  </symbol>
+</svg>
+
+<!-- Main -->
+<main>
+  <div class="container">
+
+    <!-- Banner -->
+    <div class="page-banner">
+      <h1 class="page-banner-title">Members</h1>
+      <!--<p class="page-banner-subtitle">
+        Explore the diverse and talented individuals who drive our research forward. Our members bring expertise from various disciplines, fueling innovation and creating impactful solutions for real-world challenges.
+      </p>-->
+      <img src="assets/images/members-banner.jpg" alt="Members banner" class="page-banner-img" />
+    </div>
+
+    <!-- Leadership -->
+    <section class="team-section">
+      <div class="team-section-inner">
+        <div class="team-section-header">
+          <h2 class="team-section-title">Leadership</h2>
+        </div>
+        <div class="team-grid team-grid-1">
+
+          <div class="member-card">
+            <div class="member-card-img-wrap">
+              <img src="assets/images/professor.jpeg" alt="Dr. Yi Zhu" class="member-card-img" />
+              <div class="member-card-overlay"></div>
+            </div>
+            <div class="member-card-content">
+              <p class="member-card-name">Yi Zhu</p>
+              <p class="member-card-title-text">Assistant Professor, Department of Computer Science, Wayne State University</p>
+              <p class="member-card-title-text">Email: yzhu39@wayne.edu</p>
+              <p class="member-card-title-text"><a href="https://yzhu39.github.io">Personal website</a></p>
+              <div class="member-social-links">
+                <!--<a href="https://engineering.wayne.edu/profile/hw6924" target="_blank" rel="noreferrer" class="social-link" title="Profile">
+                  <svg width="16" height="16"><use href="#icon-profile"/></svg>
+                </a>-->
+                <a href="https://yzhu39.github.io" target="_blank" rel="noreferrer" class="social-link" title="Website">
+                  <svg width="18" height="18"><use href="#icon-globe"/></svg>
+                </a>
+                <a href="mailto:yzhu39@wayne.edu" class="social-link" title="Email">
+                  <svg width="18" height="18"><use href="#icon-mail"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/yi-zhu-wayne" target="_blank" rel="noreferrer" class="social-link" title="LinkedIn">
+                  <svg width="16" height="16"><use href="#icon-linkedin"/></svg>
+                </a>
+                <a href="https://scholar.google.com/citations?hl=en&user=4aOj3xIAAAAJ" target="_blank" rel="noreferrer" class="social-link" title="Google Scholar">
+                  <svg width="16" height="16"><use href="#icon-scholar"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Openings -->
+    <div class="openings-section">
+      <h2 class="openings-title">Openings at our lab</h2>
+      <p class="openings-sub">We're always seeking talented individuals to join our lab.</p>
+      <div class="openings-list">
+
+        <div class="opening-item">
+          <div class="opening-content">
+            <h3 class="opening-title">PhD Student & Research Intern</h3>
+            <p class="opening-desc">
+              We are looking for highly motivated PhD students and research interns to join our lab working on cutting-edge research in Physical AI, Generative AI Agents, AI Security, Cyber-Physical Systems, and Internet of Things.
+              Students will conduct original research, publish in top-tier venues, and collaborate on interdisciplinary projects with both academic and industry impact.
+              We seek students with strong backgrounds in machine learning, robotics, computer vision, cybersecurity, or related areas.
+              Please contact <a href="mailto:yzhu39@wayne.edu">yzhu39@wayne.edu</a> and email your CV.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PhD Students -->
+    <section class="team-section">
+      <div class="team-section-inner">
+        <div class="team-section-header">
+          <h2 class="team-section-title">PhD students</h2>
+        </div>
+        <div class="team-grid team-grid-3plus">
+
+          <div class="member-card">
+            <div class="member-card-img-wrap">
+              <img src="assets/images/jie-ma.jpeg" alt="Jie Ma" class="member-card-img" />
+              <div class="member-card-overlay"></div>
+            </div>
+            <div class="member-card-content">
+              <p class="member-card-name">Jie Ma</p>
+              <p class="member-card-title-text">2025 - present</p>
+              <p class="member-card-title-text">Research interests: AI security, multi-modal perception, collaborative perception</p>
+              <div class="member-social-links">
+                <a href="mailto:jie.ma@wayne.edu" class="social-link" title="Email">
+                  <svg width="18" height="18"><use href="#icon-mail"/></svg>
+                </a>
+                <a href="https://github.com/JeremyMa12" target="_blank" rel="noreferrer" class="social-link" title="GitHub">
+                  <svg width="16" height="16"><use href="#icon-github"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="member-card-img-wrap">
+              <img src="assets/images/ali-baydoun.jpeg" alt="Ali Beydoun" class="member-card-img" />
+              <div class="member-card-overlay"></div>
+            </div>
+            <div class="member-card-content">
+              <p class="member-card-name">Ali Beydoun</p>
+              <p class="member-card-title-text">2026 - present</p>
+              <p class="member-card-title-text">Research interests: VLA, reinfocement learning, domain adaptation & generalization</p>
+              <div class="member-social-links">
+                <a href="mailto:id1594@wayne.edu" class="social-link" title="Email">
+                  <svg width="18" height="18"><use href="#icon-mail"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="member-card-img-wrap">
+              <img src="assets/images/Zongxi-Liu.jpeg" alt="Zongxi Liu" class="member-card-img" />
+              <div class="member-card-overlay"></div>
+            </div>
+            <div class="member-card-content">
+              <p class="member-card-name">Zongxi Liu</p>
+              <p class="member-card-title-text">2025 - present</p>
+              <p class="member-card-title-text">Research interests: VLM, VLA, AI reliability & interpretability</p>
+              <div class="member-social-links">
+                <a href="mailto:ZongxiLiu@wayne.edu" class="social-link" title="Email">
+                  <svg width="18" height="18"><use href="#icon-mail"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Masters Students -->
+    <section class="team-section">
+      <div class="team-section-inner">
+        <div class="team-section-header">
+          <h2 class="team-section-title">Masters students</h2>
+        </div>
+        <div class="team-grid team-grid-3plus">
+
+          <div class="member-card">
+            <div class="member-card-img-wrap">
+              <img src="assets/images/user.png" alt="Simran Banga" class="member-card-img" />
+              <div class="member-card-overlay"></div>
+            </div>
+            <div class="member-card-content">
+              <p class="member-card-name">Simran Banga</p>
+              <p class="member-card-title-text">2025 - present</p>
+              <div class="member-social-links"></div>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="member-card-img-wrap">
+              <img src="assets/images/user.png" alt="Lemma Sanaha" class="member-card-img" />
+              <div class="member-card-overlay"></div>
+            </div>
+            <div class="member-card-content">
+              <p class="member-card-name">Lemma Sanaha</p>
+              <p class="member-card-title-text">2025 - present</p>
+              <div class="member-social-links"></div>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="member-card-img-wrap">
+              <img src="assets/images/user.png" alt="Sree Anvita Indrakanty" class="member-card-img" />
+              <div class="member-card-overlay"></div>
+            </div>
+            <div class="member-card-content">
+              <p class="member-card-name">Sree Anvita Indrakanty</p>
+              <p class="member-card-title-text">2026 - present</p>
+              <div class="member-social-links"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Undergraduate Students -->
+    <section class="team-section">
+      <div class="team-section-inner">
+        <div class="team-section-header">
+          <h2 class="team-section-title">Undergraduate students</h2>
+        </div>
+        <div class="team-grid team-grid-3plus">
+
+          <div class="member-card">
+            <div class="member-card-img-wrap">
+              <img src="assets/images/user.png" alt="Md Ikbal Hussain" class="member-card-img" />
+              <div class="member-card-overlay"></div>
+            </div>
+            <div class="member-card-content">
+              <p class="member-card-name">Hassan Alkhafaji</p>
+              <p class="member-card-title-text">2026 - present</p>
+              <div class="member-social-links"></div>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="member-card-img-wrap">
+              <img src="assets/images/user.png" alt="Md Ikbal Hussain" class="member-card-img" />
+              <div class="member-card-overlay"></div>
+            </div>
+            <div class="member-card-content">
+              <p class="member-card-name">Kalaivani Elavazhuthi</p>
+              <p class="member-card-title-text">2026 - present</p>
+              <div class="member-social-links"></div>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="member-card-img-wrap">
+              <img src="assets/images/Salvador-Sanchez.jpeg" alt="Salvador Sanchez" class="member-card-img" />
+              <div class="member-card-overlay"></div>
+            </div>
+            <div class="member-card-content">
+              <p class="member-card-name">Salvador Sanchez</p>
+              <p class="member-card-title-text">2026 - present</p>
+              <div class="member-social-links">
+                <a href="https://www.linkedin.com/in/salvador-sanchez-b54b3b238" target="_blank" rel="noreferrer" class="social-link" title="LinkedIn">
+                  <svg width="16" height="16"><use href="#icon-linkedin"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="member-card-img-wrap">
+              <img src="assets/images/user.png" alt="Md Ikbal Hussain" class="member-card-img" />
+              <div class="member-card-overlay"></div>
+            </div>
+            <div class="member-card-content">
+              <p class="member-card-name">Mohammad Muksith</p>
+              <p class="member-card-title-text">2026 - present</p>
+              <div class="member-social-links"></div>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="member-card-img-wrap">
+              <img src="assets/images/arush-kotta.jpeg" alt="Arush Kotta" class="member-card-img" />
+              <div class="member-card-overlay"></div>
+            </div>
+            <div class="member-card-content">
+              <p class="member-card-name">Arush Kotta</p>
+              <p class="member-card-title-text">2026 - present</p>
+              <div class="member-social-links">
+                <a href="https://www.linkedin.com/in/arushkotta" target="_blank" rel="noreferrer" class="social-link" title="LinkedIn">
+                  <svg width="16" height="16"><use href="#icon-linkedin"/></svg>
+                </a>
+                <a href="https://github.com/ArushKotta" target="_blank" rel="noreferrer" class="social-link" title="GitHub">
+                  <svg width="16" height="16"><use href="#icon-github"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="member-card-img-wrap">
+              <img src="assets/images/Mohammed-Beydoun.jpeg" alt="Mohammed Beydoun" class="member-card-img" />
+              <div class="member-card-overlay"></div>
+            </div>
+            <div class="member-card-content">
+              <p class="member-card-name">Mohammed Beydoun</p>
+              <p class="member-card-title-text">2026 - present</p>
+              <div class="member-social-links">
+                <a href="mailto:Baydounprograms12@gmail.com" class="social-link" title="Email">
+                  <svg width="18" height="18"><use href="#icon-mail"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="member-card-img-wrap">
+              <img src="assets/images/user.png" alt="Md Ikbal Hussain" class="member-card-img" />
+              <div class="member-card-overlay"></div>
+            </div>
+            <div class="member-card-content">
+              <p class="member-card-name">Md Ikbal Hussain</p>
+              <p class="member-card-title-text">2025 - 2026</p>
+              <div class="member-social-links"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- High School Students -->
+    <section class="team-section">
+      <div class="team-section-inner">
+        <div class="team-section-header">
+          <h2 class="team-section-title">High School students</h2>
+        </div>
+        <div class="team-grid team-grid-1">
+
+          <div class="member-card">
+            <div class="member-card-img-wrap">
+              <img src="assets/images/user.png" alt="Avishek Sett" class="member-card-img" />
+              <div class="member-card-overlay"></div>
+            </div>
+            <div class="member-card-content">
+              <p class="member-card-name">Avishek Sett</p>
+              <p class="member-card-title-text">2025 - present</p>
+              <div class="member-social-links"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Explore CTA -->
+    <div class="explore-section">
+      <h2 class="explore-title">Explore all the research</h2>
+      <a href="research.html" class="explore-btn">View research</a>
+    </div>
+
+  </div>
+</main>
+
+<!-- Footer -->
+<footer id="contact">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-brand-name">Physical AI Lab</p>
+        <!--<p class="footer-brand-desc">Our lab is dedicated to advancing global research, driving meaningful breakthroughs across diverse fields of innovation.</p>-->
+      </div>
+      <div>
+        <p class="footer-col-title">Quick Links</p>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <!--<li><a href="about.html">About</a></li>-->
+          <li><a href="research.html">Research</a></li>
+          <li><a href="members.html">Members</a></li>
+        </ul>
+      </div>
+      <!--<div>
+        <p class="footer-col-title">Collaboration Requests</p>
+        <div class="footer-mail-row">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <a href="mailto:yzhu39@wayne.edu">yzhu39@wayne.edu</a>
+        </div>
+      </div>-->
+      <div>
+        <p class="footer-col-title">Connect With Us</p>
+        <p class="footer-connect-desc">Feel free to contact our lab with any questions you may have.</p>
+        <div class="footer-mail-row">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <a href="mailto:yzhu39@wayne.edu">yzhu39@wayne.edu</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <p class="footer-copyright">&copy; <span id="footer-year"></span> Our Lab. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
